@@ -3,8 +3,10 @@
 name: CI
 
 # Controls when the workflow will run
-on: [push, pull request]
- jobs:
+on: 
+ push:
+ pull_request:
+jobs:
    test:
      runs-on: ubuntu-latest
      steps:
