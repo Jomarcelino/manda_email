@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on: [push, pull request]
+ jobs:
+   test:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+
+       - name: configurar python
+         uses: actions/setup-python@v4
+         with:
+           python-version: '3.10'
+
+       - name: Instalar biblitecas
+         run: pip install pytest pytest-cov
+
+       - name: executar pytest
+         run: pytest --cov
